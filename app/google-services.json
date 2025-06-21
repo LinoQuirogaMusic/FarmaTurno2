@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "841106006280",
+    "project_id": "farmaturno-c50be",
+    "storage_bucket": "farmaturno-c50be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841106006280:android:b449e5a1a3a46e9dd40cbd",
+        "android_client_info": {
+          "package_name": "com.linoquirogamusic.farmaciasdeturnochile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841106006280-32m25je0b6a9s08sg8ou8aibj5fc4f37.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.linoquirogamusic.farmaciasdeturnochile",
+            "certificate_hash": "edd72b35a23ea11a5b6c67b0ced67c6ce8dd4651"
+          }
+        },
+        {
+          "client_id": "841106006280-75920lmjosl7eildp2plvv6g8dvkp8vt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvZfF7T-YEqKI4ADvubKdu_JA7L5KtLJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841106006280-75920lmjosl7eildp2plvv6g8dvkp8vt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
