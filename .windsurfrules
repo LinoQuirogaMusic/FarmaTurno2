@@ -1,0 +1,57 @@
+Estamos desarrollando MidiMic 2.0, una app Android profesional hecha en Kotlin con Jetpack Compose, evolución de MidiMic 1.
+
+Esta versión transforma la voz en eventos MIDI, e incluye:
+
+    Modo tiempo real: canta y se convierte a MIDI en vivo.
+
+    Modo grabación: graba audio, lo transcribe a .midi cuantizado según una escala personalizada, y lo sube a la nube.
+
+El usuario podrá activar:
+
+    Cuantización en el tiempo (ajuste rítmico en vivo)
+
+    Pitch bend opcional si la frecuencia no coincide con una nota exacta
+
+El envío de MIDI se podrá hacer por:
+
+    USB (Android MIDI API / USB host)
+
+    WiFi (RTP-MIDI o protocolo OSC/UDP personalizado)
+
+El usuario podrá definir escalas de notas (mayores, menores, pentatónicas, o personalizadas).
+
+Los archivos .midi generados podrán subirse a la nube (Firebase Storage u otro servicio).
+
+TECNOLOGÍAS POR FUNCIÓN
+Funcionalidad	Tecnología sugerida
+UI	Jetpack Compose + Material 3
+Pitch detection	TarsosDSP (base actual), evaluar crepe-onnx o aubio si se usa NDK o IA ligera
+Cuantización rítmica	Algoritmo propio con temporizador + rejilla (grid)
+Pitch bend	Cálculo de cents + mensaje MIDI pitch bend
+Conexión MIDI USB	Android MIDI API / UsbMidiDriver
+Conexión MIDI WiFi	RTP-MIDI (si posible), o protocolo OSC/UDP
+Grabación de audio	AudioRecord o MediaRecorder
+Exportar archivo .midi	MidiFileWriter o libs compatibles en Android
+Subida a la nube	Firebase Storage
+
+ARQUITECTURA BASE (MVVM):
+
+📁 ui/           → Pantallas en Jetpack Compose
+📁 viewmodel/    → Lógica de presentación
+📁 audio/        → Grabación y pitch detection
+📁 midi/         → Generación de eventos, cuantización, exportación
+📁 network/      → Envío de MIDI por red local
+📁 usb/          → Comunicación MIDI por USB
+📁 data/         → Escalas, configuración
+📁 cloud/        → Subida de archivos a la nube
+📁 utils/        → Extensiones y helpers
+
+REGLAS TÉCNICAS
+
+    Usa compileDebugKotlin para verificar que todo compile correctamente.
+
+    Si necesitas modificar build.gradle.kts, solo añade lo necesario (no cambies lo que ya funciona).
+
+    Usa Coroutines y Flow para flujos de datos reactivos.
+
+    No incluyas comentarios explicativos si el código es evidente. Comenta solo decisiones técnicas o funciones futuras.
